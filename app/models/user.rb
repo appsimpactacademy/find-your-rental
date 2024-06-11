@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :confirmable, 
          :trackable
 
-  validates :first_name, :last_name, :contact_number, :whatsapp_number, presence: true
+  validates :first_name, :last_name, :contact_number, :whatsapp_number, :role, presence: true
 
   def name
     "#{first_name} #{last_name}".strip
