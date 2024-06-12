@@ -1,5 +1,5 @@
 # app/controllers/owner/properties_controller.rb
-class Owner::PropertiesController < ApplicationController
+class Owner::PropertiesController < OwnerController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
