@@ -6,12 +6,13 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
   root 'home#index'
-  
+
   namespace :admin do
     get :dashboard
   end
 
   namespace :owner do
     get :dashboard
+    resources :properties
   end
 end

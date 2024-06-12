@@ -1,0 +1,58 @@
+<%= form_with(model: [:owner, @property], local: true) do |form| %>
+  <% if @property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+      <ul>
+        <% @property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.label :property_type_id %>
+    <%= form.collection_select :property_type_id, PropertyType.all, :id, :name, { prompt: "Select a Property Type" }, { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.label :address_line_1 %>
+    <%= form.text_field :address_line_1, class: 'form-control mt-2 mb-2', placeholder: "Address Line 1" %>
+  </div>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.label :address_line_2 %>
+    <%= form.text_field :address_line_2, class: 'form-control mt-2 mb-2', placeholder: "Address Line 2" %>
+  </div>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.label :city %>
+    <%= form.text_field :city, class: 'form-control mt-2 mb-2', placeholder: "City" %>
+  </div>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.label :state %>
+    <%= form.text_field :state, class: 'form-control mt-2 mb-2', placeholder: "State" %>
+  </div>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.label :country %>
+    <%= form.text_field :country, class: 'form-control mt-2 mb-2', placeholder: "Country" %>
+  </div>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.label :postal_code %>
+    <%= form.text_field :postal_code, class: 'form-control mt-2 mb-2', placeholder: "Postal Code" %>
+  </div>
+
+  <%= form.hidden_field :owner_id, value: current_user.id %>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control mt-2 mb-2', placeholder: "Description" %>
+  </div>
+
+  <div class="form-group mt-1 mb-1">
+    <%= form.submit class: 'btn btn-primary mt-2 mb-2' %>
+  </div>
+<% end %>

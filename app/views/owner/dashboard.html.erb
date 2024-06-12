@@ -1,1 +1,15 @@
-dashboard.html.erb
+<div class="row">
+  <div class="col-md-4">
+  	<%= link_to owner_properties_path, class: "text-decoration-none" do %>
+	    <div class="card text-white bg-primary mb-3">
+	      <div class="card-header">Property Count</div>
+	      <div class="card-body text-center">
+	        <h5 class="card-title">Total Properties</h5>
+	        <p class="card-text">
+	          <span class="display-6"><%= Property.count %></span>
+	        </p>
+	      </div>
+	    </div>
+	  <% end %>   
+  </div>
+</div>

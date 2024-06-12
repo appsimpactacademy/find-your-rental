@@ -1,0 +1,20 @@
+<h1>Property Details</h1>
+
+<div class="card">
+  <img src="https://img.freepik.com/free-photo/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge_1258-150749.jpg?t=st=1718181671~exp=1718185271~hmac=9eb3c014f801ca9cc3239edcb56ec187ef728ae0bb4dba8aa6f17e7ae70baad0&w=1380" class="card-img-top" alt="Property image">
+  <div class="card-body">
+    <h5 class="card-title">Property Type: <%= @property.property_type.name %></h5>
+    <p>Property Type Description: <%= @property.property_type.description %></p>
+    <p class="card-text">
+      <strong>Address:</strong> <%= @property.address_line_1 %><br>
+      <% if @property.address_line_2.present? %>
+        <%= @property.address_line_2 %><br>
+      <% end %>
+      <%= @property.city %>, <%= @property.state %><br>
+      <%= @property.country %> - <%= @property.postal_code %><br><br>
+      <strong>Description:</strong> <%= @property.description %>
+    </p>
+    <%= link_to 'Edit', edit_owner_property_path(@property), class: 'btn btn-warning' %>
+    <%= link_to 'Back to Properties', owner_properties_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
