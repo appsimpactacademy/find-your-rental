@@ -9,4 +9,3 @@ pin "@popperjs/core", to: "https://ga.jspm.io/npm:@popperjs/core@2.11.8/lib/inde
 pin "bootstrap", to: "bootstrap.min.js"
 pin 'coreui', to: 'https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.2/dist/js/coreui.esm.js'
 pin 'coreui-icons', to: 'https://cdn.jsdelivr.net/npm/@coreui/icons@3.0.1/dist/cjs/index.min.js'
-
